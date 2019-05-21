@@ -30,7 +30,7 @@ function populaPlacaCarros(quantidadePlacas) {
     }
 }
 
-function filtrar(array, regex) {
+function imprimirElementosValidos(array, regex) {
     array.forEach((element) => {
         regexPlacaMercosul.test(element) ? console.log(`%c ${element} - OK\t\t\t`, 'background: #2ECC71; color: #212F3D') : console.log(`%c ${element} - ERRO (Fora do padrão)\t\t\t`, 'background: #F5B7B1; color: #212F3D');
     });
@@ -39,7 +39,7 @@ function filtrar(array, regex) {
 
 function init() {
     //Inserção de placas fora do padrão
-    placaCarros.push('AAAA542');
+    placaCarros.push('!%$42AA');
     placaCarros.push('AAA2A542');
     placaCarros.push('A422C2');
     placaCarros.push('AJK42');
@@ -50,7 +50,7 @@ function init() {
     placaCarros.push('ASFG12FSADF');
 
     populaPlacaCarros(350);
-    filtrar(placaCarros, regexPlacaMercosul);
+    imprimirElementosValidos(placaCarros, regexPlacaMercosul);
 }
 
 init();
