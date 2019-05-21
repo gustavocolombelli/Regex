@@ -1,4 +1,4 @@
-//Explicação de aplicação de Regx na prática.
+//Explicação de aplicação de Regex na prática.
 
 let placaCarros = new Array();
 
