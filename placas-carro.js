@@ -1,6 +1,6 @@
 //Explicação de aplicação de Regx na prática.
 
-let placasCarro = new Array();
+let placaCarros = new Array();
 
 
 //Definição do regex para placado padrão Mercosul
@@ -24,8 +24,33 @@ function gerarPlacaMercosulAleatoria() {
         getInteiroAleatorio(48, 57));
 }
 
-function populaPlacasCarro(quantidadePlacas) {
+function populaPlacaCarros(quantidadePlacas) {
     while (quantidadePlacas--) {
-        placasCarro.push(gerarPlacaMercosulAleatoria());
+        placaCarros.push(gerarPlacaMercosulAleatoria());
     }
 }
+
+function filtrar(array, regex) {
+    array.forEach((element) => {
+        regexPlacaMercosul.test(element) ? console.log(`%c ${element} - OK\t\t\t`, 'background: #2ECC71; color: #212F3D') : console.log(`%c ${element} - ERRO (Fora do padrão)\t\t\t`, 'background: #F5B7B1; color: #212F3D');
+    });
+};
+
+
+function init() {
+    //Inserção de placas fora do padrão
+    placaCarros.push('AAAA542');
+    placaCarros.push('AAA2A542');
+    placaCarros.push('A422C2');
+    placaCarros.push('AJK42');
+    placaCarros.push('AH-S2C2');
+    placaCarros.push('AAA1235');
+    placaCarros.push('ACG6657677');
+    placaCarros.push('ASDY23V');
+    placaCarros.push('ASFG12FSADF');
+
+    populaPlacaCarros(350);
+    filtrar(placaCarros, regexPlacaMercosul);
+}
+
+init();
